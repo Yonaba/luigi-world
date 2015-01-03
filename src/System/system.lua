@@ -1,4 +1,4 @@
 while true do
-	dofile("script.lua")
+  dofile("script.lua")
 end
 
