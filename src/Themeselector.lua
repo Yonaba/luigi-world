@@ -22,33 +22,33 @@ font:setPixelSizes(16,16)
 oldpad = Controls.read()
 
 while true do
-	screen:clear()
-	pad = Controls.read()
+  screen:clear()
+  pad = Controls.read()
 
-	if pad:triangle() then
-		dofile("files/game3.lua")
-		file:close()
-	end
+  if pad:triangle() then
+    dofile("files/game3.lua")
+    file:close()
+  end
 
-	if pad:circle() and not oldpad:circle() then 
-		dofile("files/game2.lua")
-		file:close()
-	end
+  if pad:circle() and not oldpad:circle() then 
+    dofile("files/game2.lua")
+    file:close()
+  end
 
-	if pad:cross() and not oldpad:cross() then 
-		dofile("files/game.lua")
-		file:close()
-	end
+  if pad:cross() and not oldpad:cross() then 
+    dofile("files/game.lua")
+    file:close()
+  end
 
-	screen:blit(7,99,theme1)
-	screen:blit(164,99,theme2)
-	screen:blit(322,99,theme3)
-	screen:fontPrint(font, 100,20, "Choose The Theme Of the Level", shadow)
-	screen:fontPrint(font, 37 , 93 , "Cross",shadow)
-	screen:fontPrint(font, 194 , 93 , "Circle",shadow)
-	screen:fontPrint(font, 352 , 93 , "Triangle",shadow)
+  screen:blit(7,99,theme1)
+  screen:blit(164,99,theme2)
+  screen:blit(322,99,theme3)
+  screen:fontPrint(font, 100,20, "Choose The Theme Of the Level", shadow)
+  screen:fontPrint(font, 37 , 93 , "Cross",shadow)
+  screen:fontPrint(font, 194 , 93 , "Circle",shadow)
+  screen:fontPrint(font, 352 , 93 , "Triangle",shadow)
 
-	oldpad = pad
-	screen.waitVblankStart()
-	screen.flip()
+  oldpad = pad
+  screen.waitVblankStart()
+  screen.flip()
 end
